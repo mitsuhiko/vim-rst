@@ -1,0 +1,9 @@
+reStructuredText Syntax for Vim
+===============================
+
+This module is a basic vim support for RST that is based on RIV by Rykka G.F
+but with a lot of complexity and features removed.
+
+Original author:
+
+- Nikolai Weibull
