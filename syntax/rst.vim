@@ -31,9 +31,6 @@ syn region  rstQuotedLiteralBlock   matchgroup=rstDelimiter
       \ start="::\_s*\n\ze\z([!\"#$%&'()*+,-./:;<=>?@[\]^_`{|}~]\)"
       \ end='^\z1\@!' contains=@NoSpell
 
-syn region  rstDoctestBlock         display matchgroup=rstDelimiter
-      \ start='^>>>\s' end='^\s*$'
-
 syn region  rstTable                transparent start='\%(\_^\s*\n\)\@<=\s*+[-=+]\+' end='^\s*$'
       \ contains=rstTableLines,@rstCruft
 syn match   rstTableLines           contained display '|\|+\%(=\+\|-\+\)\='
@@ -145,9 +142,12 @@ exe 'syn match  rstStandaloneHyperlink  contains=@NoSpell '
     \. '`\<\%(\%(\%(https\=\|file\|ftp\|gopher\)://\|\%(mailto\|news\):\)[^[:space:]''\"<>]\+\|www[[:alnum:]_-]*\.[[:alnum:]_-]\+\.[^[:space:]''\"<>]\+\)[[:alnum:]/]'
     \.'\|\<[[:alnum:]_-]\+\%(\.[[:alnum:]_-]\)*@[[:alnum:]]\%([[:alnum:]-]*[[:alnum:]]\.\)\+[[:alnum:]]\%([[:alnum:]-]*[[:alnum:]]\)\=\>`'
 
+" Match doctest blocks
+syn region  rstDoctestBlock         display start='^>>> ' end='^\s*$'
+
 " TODO: Use better syncing.  I don’t know the specifics of syncing well enough,
 " though.
-syn sync minlines=50 linebreaks=1
+syn sync minlines=100 linebreaks=1
 " every line start with \S will end pevious highlight group
 
 hi def link rstTodo                         Todo
