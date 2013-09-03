@@ -50,7 +50,7 @@ syn cluster rstDirectives           contains=rstFootnote,rstCitation,
 syn match   rstExplicitMarkup       '^\.\.\_s'
       \ nextgroup=@rstDirectives,rstComment,rstSubstitutionDefinition
 
-let s:ReferenceName = '[[:alnum:]]\+\%([_.-][[:alnum:]]\+\)*'
+let s:ReferenceName = '[[:alnum:]]\+\%([_.:-][[:alnum:]]\+\)*'
 
 
 execute 'syn region rstComment contained' .
