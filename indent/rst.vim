@@ -3,4 +3,4 @@ if exists("b:did_indent")
 endif
 let b:did_indent = 1
 
-setlocal nosmartindent
+setlocal nosmartindent autoindent
